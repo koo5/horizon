@@ -4,3 +4,4 @@ exifread
 geopy
 kivy
 kivy-garden
+mapview
