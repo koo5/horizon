@@ -1,0 +1,6 @@
+click
+pillow
+exifread
+geopy
+kivy
+kivy-garden
