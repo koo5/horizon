@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 """
-Interactive linux app in python with kivy. The app will take a directory as a command line parameter. It will scan the directory recursively for jpeg files that contain location and orientation information ('GPS GPSImgDirection') in metadata. It will index all these files in an in-memory list.
+Interactive linux app in python with kivy. 
+
+The app will take a directory as a command line parameter. It will scan the directory recursively for jpeg files that contain location and orientation information ('GPS GPSImgDirection') in metadata. It will index all these files in an in-memory list.
 
 The main window will be split in two halves: the right half displays a map from a public api, such as open street map. The center of the map represents current user location, and is marked by a red marker point. Each geolocated photo is represented on the map with a small thumbnail.
 
