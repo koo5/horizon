@@ -89,7 +89,7 @@ class PhotoMapApp(App):
 		self.root = BoxLayout(orientation='horizontal')
 
 		# Left pane: Image viewer
-		self.left_pane = ScrollView(size_hint=(0.5, 1))  # 30% of the width for the left pane
+		self.left_pane = ScrollView(size_hint=(0.5, 1))
 		self.left_layout = GridLayout(cols=4, rows=4, size_hint_y=None)
 		self.left_layout.bind(minimum_height=self.left_layout.setter('height'), minimum_width=self.left_layout.setter('width'))
 		self.left_pane.add_widget(self.left_layout)
@@ -97,8 +97,11 @@ class PhotoMapApp(App):
 		self.load_images()
 
 		# Right pane: Map viewer
-		self.right_pane = FloatLayout(size_hint=(0.5, 1))  # 70% of the width for the right pane
-		self.map_view = MapView(zoom=2, lat=0, lon=0)
+		self.right_pane = GridLayout(cols=1, rows=1, size_hint=(0.5, 1))
+		self.map_view = MapView(zoom=5, lat=0, lon=0)
+		self.map_view.map_source.min_zoom = 1
+
+
 		self.map_view.bind(on_map_relocated=self.on_map_event)
 		self.map_view.bind(on_map_rotated=self.on_map_event)
 		self.right_pane.add_widget(self.map_view)
